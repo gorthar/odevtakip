@@ -1,0 +1,43 @@
+{% extends "studentView/smain.html" %}
+
+{% block content %}
+<div class="column is-6 is-offset-3" style="margin:auto; margin-top:6rem; max-width:800px; ">
+    <div class="fa-3x">
+        <h1>Ödevler</h1>
+    </div>
+    <table class="table arkaplan yazi-beyaz">
+        <thead>
+
+        <tr>
+            <th>Ödev Adı</th>
+            <th>Açıklama</th>
+            <th>Teslim Durumu</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for row in tablo %}
+        <tr>
+
+            <td>{{row['odevadi']}}</td>
+            <td>{{row['odevmesaj']}}</td>
+            {% if row['teslim']=="True" %}
+
+                    <td class="is-clickable " onclick="window.location='{{ url_for('studentController.submit', assignment_id=row['odevno']) }}'"><i
+                    class="far fa-thumbs-up"></i></td>
+                {% else %}
+                 <td class="is-clickable " onclick="window.location='{{ url_for('studentController.submit', assignment_id=row['odevno']) }}'"><i
+                    class="far fa-thumbs-down"></i></td>
+                {% endif %}
+
+
+        </tr>
+         {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
