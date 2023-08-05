@@ -18,13 +18,13 @@ Clone this repository to your local machine using the following command:
 
     bash
 
-    git clone https://github.com/your-username/teacher-assignment-management.git
+    git clone https://github.com/gorthar/odevtakip.git
 
 Navigate to the project directory:
 
 bash
 
-    cd teacher-assignment-management
+    cd odevtakip
 
 Create a virtual environment:
 
